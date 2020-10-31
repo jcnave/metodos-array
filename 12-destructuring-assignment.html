@@ -1,0 +1,60 @@
+<script>
+  const user = {
+    nome: "Usuário",
+    idade: 25,
+    endereco: {
+      rua: "Rua central",
+      numero: 1,
+    },
+    projetos: ["Projeto 1", "Projeto 2"],
+  };
+
+  const studentsObj = [
+    { id: 1, name: "John Doe", age: 23, scholarship: false },
+    { id: 2, name: "Margoe Rose", age: 19, scholarship: true },
+    { id: 3, name: "Kayle", age: 22, scholarship: true },
+  ];
+
+  console.warn(
+    "A) Dado o objeto user, realize os seguintes exercícios utilizando ao máximo a desestruturação:"
+  );
+  let {
+    nome: name,
+    endereco: { rua: street },
+    projetos: projects,
+  } = user;
+
+  console.warn("Desestruture e imprima o nome.");
+  console.log(name);
+
+  console.warn("Desestruture e imprima a rua.");
+  console.log(street);
+
+  console.warn("Desestruture e imprima os projetos.");
+  console.log(projects);
+
+  console.warn(
+    "Desestruture e imprima a segunda posição da propriedade projetos."
+  );
+  let {
+    projetos: { 1: segundoProjeto },
+  } = user;
+  console.log(segundoProjeto);
+
+  console.warn(
+    "B) Dado o array studentsObj , realize os seguintes exercícios utilizando ao máximo a desestruturação:"
+  );
+  console.warn("Desestruture e imprima o primeiro elemento do array.");
+  let { 0: primeiroAluno } = studentsObj;
+  console.log(primeiroAluno);
+
+  console.warn("Desestruture e imprima o terceiro elemento do array.");
+  let { 2: terceiroAluno } = studentsObj;
+  console.log(terceiroAluno);
+
+  console.warn("Desestruture e imprima o nome do segundo elemento do array.");
+  let {
+    1: { name: segundoNome },
+  } = studentsObj;
+  console.log(segundoNome);
+</script>
