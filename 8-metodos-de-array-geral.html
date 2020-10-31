@@ -1,0 +1,44 @@
+<script>
+  console.warn("studentsObj");
+  const studentsObj = [
+    { id: 1, name: "John Doe", age: 23, scholarship: false },
+    { id: 2, name: "Margoe Rose", age: 19, scholarship: true },
+    { id: 3, name: "Kayle", age: 22, scholarship: true },
+  ];
+  console.log(studentsObj);
+
+  console.warn(
+    "A) Utilizando o array studentsObj fornecido anteriormente realize os seguintes exercícios:"
+  );
+
+  console.warn("1. Retornar um array de nomes existentes.");
+  console.log(studentsObj.map((item) => item.name));
+
+  console.warn("2. Retornar um array de items de estudantes que têm bolsa.");
+  console.log(studentsObj.filter((item) => item.scholarship));
+
+  console.warn(
+    "3. Retornar um array de items de pessoas com menos de 23 anos."
+  );
+  console.log(studentsObj.filter((item) => item.age < 23));
+
+  console.warn("4. Testar se todos são bolsistas (scholarship).");
+  console.log(studentsObj.every((item) => item.scholarship));
+
+  console.warn("5. Testar se existe algum bosista (scholarship).");
+  console.log(studentsObj.some((item) => item.scholarship));
+
+  console.warn("6. Retornar a soma de todos as idades dos alunos.");
+  const agesStudents = [];
+  studentsObj.map((item) => agesStudents.push(item.age));
+  const valuesSum = (accumulator, currentValue) => accumulator + currentValue;
+  console.log(agesStudents.reduce(valuesSum));
+
+  console.warn("7. Retornar um array em ordem crescente de idades.");
+  let agesStudentsAsc = agesStudents;
+  console.log(agesStudentsAsc.sort((a, b) => a - b));
+
+  console.warn("8. Retornar um array em ordem decrescente de idades.");
+  let agesStudentsDesc = agesStudents;
+  console.log(agesStudentsDesc.sort((a, b) => b - a));
+</script>
